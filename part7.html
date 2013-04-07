@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>MMEYER TBP - CSPP53001</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/smoothness/jquery-ui-1.9.2.custom.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+      <div id="main_wrapper" class="sideShadow">
+        <div id="topPadding">
+        </div>
+        <div>
+          Lookup fields are autocomplete.  Just try typing something!
+        </div>
+        <div id="showTables" class="contentDiv">
+          <button onclick="showTables()" id="showTables_button">Display Tables</button>
+          <div id="tableList"></div>
+        </div>
+        <hr/>
+        <div id="findUsers" class="contentDiv">
+          <a href="list_users.php">list users</a><br/>
+          <label for="findUsers_input">Find User Details: </label>
+          <input id="findUsers_input" />
+          <table id="findUsers_details"></table>
+        </div>
+        <hr/>
+        <div id="findTweets" class="contentDiv">
+          Create New User
+          <form action="create_user.php" method="post">
+            <input name="handle" id="createUser_handle" type="text" placeholder="handle" required="required"/>
+            <br />
+            <input name="name" id="createUser_name" type="text" placeholder="name"/>
+            <br />
+            <input name="email" id="createUser_email" type="email" placeholder="email"/>
+            <br />
+            <input name="password" id="createUser_password" type="password" placeholder="password" required="required"/>
+            <br />
+            <button class="btn btn-success">create</button>
+          </form>
+        </div>
+        <hr />
+        <div id="findTweets" class="contentDiv">
+          <a href="list_tweets.php">list_users with tweets</a><br/>
+          <label for="findTweets_input">Find Tweets by User: </label>
+          <input id="findTweets_input" />
+          <ul id="findTweets_ul"></ul>
+        </div>
+        <hr/>
+        <div id="sendTweets" class="contentDiv">
+          Send a new tweet
+          <input type="text" id="sendHandle" placeholder="handle hint: try zippers">
+          <textarea id="tweet_box" maxlength="140" placeholder="what's happening"></textarea>
+          <button class="btn btn-primary" onclick="send_tweet()">tweet</button>
+        </div>
+        <hr />
+        <div id="findMentions" class="contentDiv">
+          <label for="findMentions_input">Find Mentions for User: </label>
+          <input id="findMentions_input" />
+          <ul id="findMentions_ul"></ul>
+        </div>
+        <hr/>
+        <div id="followUser" class="contentDiv">
+          Add new follow
+          <input type="text" id="newLeader" placeholder="leader">
+          <input type="text" id="newFollower" placeholder="follower">
+          <button onclick="follow_user()">follow</button>
+        </div>
+        <hr/>
+        <div id="findFollowers" class="contentDiv">
+          <label for="findFollowers_input">Find Followers of User: </label>
+          <input id="findFollowers_input" />
+          <ul id="findFollowers_ul"></ul>
+        </div>
+        <hr/>
+        <div id="findLeaders" class="contentDiv">
+          <label for="findLeaders_input">Find Leaders of User: </label>
+          <input id="findLeaders_input" />
+          <ul id="findLeaders_ul"></ul>
+        </div>
+        <hr/>
+        <div id="findHashtags" class="contentDiv">
+          <span>Just press down arrow to fetch all hashtags</span><br/>
+          <label for="findHashtags_input">Find Hashtags: </label>
+          <input id="findHashtags_input" />
+          <ul id="findHashtags_ul"></ul>
+        </div>
+      </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery-ui-1.9.2.custom.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <script>
+            var _gaq=[['_setAccount','UA-35682339-1'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    </body>
+</html>
